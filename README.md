@@ -1,19 +1,14 @@
-# 🎈 Blank app template
-
-A simple Streamlit app template for you to modify!
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
-
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+import streamlit as st
+import pandas as pd
+import numpy as np
+all_users = ["Allie","Emory","Elsie","Feliciry","uncle z","Dad","Kate the great","Elizibith","ant Flo","mom"]
+with st.container(border=True):
+    users = st.multiselect("Users", all_users, default=all_users)
+    rolling_average = st.toggle("Rolling average")
+np.random.seed(42)
+data = pd.DataFrame(np.random.randn(20, len(users)), columns=users)
+if rolling_average:
+    data = data.rolling(7).mean().dropna()
+# tab1, tab2 = st.tabs(["Chart", "Dataframe"])
+# tab1.line_chart(data, height=250)
+st.data_editor(data, height=250, use_container_width=True)
