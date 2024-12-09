@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-all_users = ["Allie","Emory","Elsie","Feliciry","uncle z","Dad","Kate the great","Elizibith","ant Flo","mom"]
+all_users = ["Allie","Emory","Elsie","Feliciry","uncle z","Dad","Kate the great","ant Flo","mom","Lottie"]
 with st.container(border=True):
     users = st.multiselect("Users", all_users, default=all_users)
     rolling_average = st.toggle("Rolling average")
