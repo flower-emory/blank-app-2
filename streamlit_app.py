@@ -10,8 +10,14 @@ st.write("Your current goal is ", goal)
 name = st.text_input("What is your name?")
 st.write("Nice too meat you ", name)
 
-all_users = [name]
-with st.container(border=True):
-    user = st.selectbox("User", all_users)
+
+# If you want to edit a LIST!
+name_list = st.data_editor(
+    ["$0.00"], 
+    num_rows="dynamic"
+)
+
+st.text(name_list)
 
 st.balloons()
+st.write("you have reached your goal")
