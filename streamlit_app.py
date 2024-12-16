@@ -16,7 +16,13 @@ def get_data(name):
 
 st.title("this is your savings")
 
-st.write("so this is how this is going to work so you are going to write your name and then you will write what is your goal and then you can write what you have saved and when you finish well I'll leave that to you to fined out!")
+st.write("""
+* Write your name
+* Write your goal 
+* Put in the amount you have saved
+* And when you come back just
+* Write your name
+  """)
 
 name = st.text_input("What is your name?")
 st.write("Nice to meet you ", name)
